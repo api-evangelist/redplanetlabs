@@ -1,0 +1,22 @@
+generated: '2026-07-21'
+method: searched
+source: https://github.com/redplanetlabs/rama-ai-learn
+description: >-
+  Red Planet Labs publishes first-party Agent Skills for authoring Rama code. The
+  rama-ai-learn repository ships an AGENTS.md and skill files in agentskills.io
+  format at plugins/rama-skill/skills/rama/, developed through an iterative
+  challenge harness whose goal is to "one-shot complex, scalable, and
+  fault-tolerant backends." These are provider-published skills captured by
+  reference (not regenerated here, since there is no OpenAPI to independently
+  ground new skills against).
+skills:
+  - name: rama
+    kind: authoring
+    description: >-
+      Agent Skill for developing scalable, fault-tolerant backends with the Rama
+      platform (Java/Clojure on the JVM).
+    format: agentskills.io
+    path: plugins/rama-skill/skills/rama/
+    repo: https://github.com/redplanetlabs/rama-ai-learn
+    agents_md: https://github.com/redplanetlabs/rama-ai-learn/blob/main/AGENTS.md
+    official: true

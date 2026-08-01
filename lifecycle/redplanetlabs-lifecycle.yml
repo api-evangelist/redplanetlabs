@@ -1,0 +1,30 @@
+generated: '2026-07-21'
+method: searched
+source: >-
+  https://redplanetlabs.com/docs/~/downloads-maven-local-dev.html and
+  https://github.com/redplanetlabs/rama-release-notes
+description: >-
+  Versioning and lifecycle posture for the Rama platform. Rama ships as versioned
+  releases; the CLI, core library, and cluster must run the same release version.
+  Release changes are documented in the public rama-release-notes repository.
+versioning:
+  scheme: semver-style per-artifact versions, released together per Rama release.
+  current:
+    rama: 1.9.0
+    rama-helpers: 0.10.0
+    rama-kafka: 0.14.0
+  compatibility_rule: >-
+    The CLI/library release version must match the connected cluster version.
+release_notes:
+  repo: https://github.com/redplanetlabs/rama-release-notes
+  detail: changelog/redplanetlabs-changelog.yml
+deprecation:
+  policy: none published
+  headers: none documented (no RFC 8594 Sunset/Deprecation headers observed)
+status_page:
+  url: none published
+  note: No public status/uptime page found; Rama is self-hosted by the customer.
+sla:
+  note: >-
+    Priority support is offered on paid tiers (Evaluation and above); no public
+    uptime SLA (the customer operates their own cluster).

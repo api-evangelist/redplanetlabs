@@ -1,0 +1,52 @@
+generated: '2026-07-21'
+method: searched
+source: https://redplanetlabs.com/docs/~/downloads-maven-local-dev.html
+description: >-
+  First-party Red Planet Labs client libraries for the Rama platform. Rama is a
+  JVM platform (Java/Clojure); its libraries are published as Maven artifacts
+  under the com.rpl groupId. The core `rama` library is hosted on the Red Planet
+  Labs Nexus (not Maven Central); Specter is on Clojars. Coordinates captured
+  verbatim from the Rama Maven local-development documentation.
+repositories:
+  - name: Red Planet Labs Nexus
+    url: https://nexus.redplanetlabs.com/repository/maven-public-releases
+  - name: Clojars
+    url: https://repo.clojars.org/
+packages:
+  - language: java
+    registry: maven
+    name: com.rpl:rama
+    group_id: com.rpl
+    artifact_id: rama
+    version: 1.9.0
+    repository: https://nexus.redplanetlabs.com/repository/maven-public-releases
+    source: https://github.com/redplanetlabs
+    official: true
+    note: Core Rama library (scope provided).
+  - language: java
+    registry: maven
+    name: com.rpl:rama-helpers
+    group_id: com.rpl
+    artifact_id: rama-helpers
+    version: 0.10.0
+    repository: https://nexus.redplanetlabs.com/repository/maven-public-releases
+    source: https://github.com/redplanetlabs/rama-helpers
+    official: true
+    note: Utility library for Rama module development.
+  - language: java
+    registry: maven
+    name: com.rpl:rama-kafka
+    group_id: com.rpl
+    artifact_id: rama-kafka
+    version: 0.14.0
+    repository: https://nexus.redplanetlabs.com/repository/maven-public-releases
+    source: https://github.com/redplanetlabs/rama-kafka
+    official: true
+    note: Use Kafka as a depot or publishing target in Rama modules.
+  - language: clojure
+    registry: clojars
+    name: com.rpl/specter
+    url: https://clojars.org/com.rpl/specter
+    source: https://github.com/redplanetlabs/specter
+    official: true
+    note: Open-source Clojure/ClojureScript data navigation/transformation library (2.6k+ stars).

@@ -1,0 +1,13 @@
+generated: '2026-07-21'
+method: searched
+source: https://redplanetlabs.com/docs/~/rest.html
+description: >-
+  Authentication profile for the Rama REST API. The published REST API
+  documentation does not describe an authentication or authorization scheme; the
+  surface is exposed by Supervisors for use within a deployed cluster's network
+  boundary. No API keys, OAuth, or OIDC are documented.
+schemes: []
+note: >-
+  Absence of a documented auth scheme is expected for a self-hosted, in-cluster
+  RPC surface. Cluster access is governed at the network/deployment layer
+  (see the AWS/Azure deploy tooling), not by an application-level API credential.

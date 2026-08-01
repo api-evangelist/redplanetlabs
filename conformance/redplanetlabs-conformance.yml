@@ -1,0 +1,34 @@
+generated: '2026-07-21'
+method: derived
+source: >-
+  Derived from the Rama REST API documentation
+  (https://redplanetlabs.com/docs/~/rest.html), the pricing/security posture, and
+  live well-known probes. Rama is a self-hosted JVM backend platform; its REST
+  surface is a minimal RPC layer, so most cross-cutting web-API standards are not
+  applicable rather than deficient.
+standards:
+  - id: oauth2
+    conforms: false
+    evidence: No OAuth 2.0 flow documented for the REST API; no authorization server discovered.
+  - id: oidc
+    conforms: false
+    evidence: /.well-known/openid-configuration returns 404 on redplanetlabs.com.
+  - id: rfc9457
+    conforms: false
+    evidence: Errors use plain HTTP status codes; no application/problem+json envelope.
+  - id: pagination
+    conforms: false
+    evidence: Queries navigate PStates via path arrays; no cursor/offset pagination.
+  - id: idempotency
+    conforms: false
+    evidence: >-
+      No Idempotency-Key header; depot delivery semantics are controlled via the
+      ackLevel field, not HTTP idempotency keys.
+  - id: json-api
+    conforms: false
+    evidence: Custom JSON encoding with "#__<type>" escapes; not JSON:API compliant.
+  - id: rest
+    conforms: partial
+    evidence: >-
+      HTTP+JSON RPC surface (POST-only endpoints for depot append, PState query,
+      query-topology invoke); not resource-oriented REST.

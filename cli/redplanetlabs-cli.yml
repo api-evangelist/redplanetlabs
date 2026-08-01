@@ -1,0 +1,38 @@
+generated: '2026-07-21'
+method: searched
+source: https://redplanetlabs.com/docs/~/operating-rama.html
+description: >-
+  The `rama` CLI — the operational command surface for the Rama platform. It
+  ships as a `rama` script at the root of an unpacked Rama release and is
+  configured via `rama.yaml` (set `conductor.host` to target a cluster). The
+  release version of the CLI must match the cluster version. The binary is
+  distributed with the Rama release download, not a package registry.
+docs: https://redplanetlabs.com/docs/~/operating-rama.html
+install:
+  download: https://redplanetlabs.com/download
+  note: >-
+    Unpack the Rama release; invoke ./rama from the release root. Configure
+    conductor.host in rama.yaml to operate a cluster remotely.
+commands:
+  module_management:
+    - {name: deploy, description: "Launches or updates a module (flags --action launch | --action update)."}
+    - {name: destroy, description: "destroy <moduleName> — removes a module; fails if dependent modules exist."}
+    - {name: scaleExecutors, description: Adjusts worker count, thread count, or replication factor.}
+    - {name: moduleStatus, description: "moduleStatus <moduleName> — displays current module status."}
+  cluster_operations:
+    - {name: conductor, description: Launches a Conductor.}
+    - {name: supervisor, description: Launches a Supervisor.}
+    - {name: shutdownCluster, description: Gracefully shuts down a cluster, letting in-flight processing complete.}
+    - {name: devZookeeper, description: Launches a test-only Zookeeper server.}
+  license_management:
+    - {name: upsertLicense, description: "upsertLicense --licensePath <path> — adds licenses to the Conductor."}
+    - {name: cleanupLicenses, description: Removes expired licenses from the Conductor.}
+    - {name: licenseInfo, description: Shows installed license details.}
+  topology_control:
+    - {name: pauseTopology, description: "pauseTopology <moduleName> <topologyName> — halts microbatch processing."}
+    - {name: resumeTopology, description: "resumeTopology <moduleName> <topologyName> — resumes microbatch processing."}
+  utilities:
+    - {name: setOption, description: Modifies dynamic configuration options at runtime.}
+    - {name: runJava, description: Executes Java code with Rama on the classpath.}
+    - {name: runClj, description: Executes Clojure code with Rama on the classpath.}
+    - {name: supportBundle, description: Generates diagnostic data for debugging.}

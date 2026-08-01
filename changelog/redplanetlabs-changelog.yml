@@ -1,0 +1,25 @@
+generated: '2026-07-21'
+method: searched
+source: https://github.com/redplanetlabs/rama-release-notes
+description: >-
+  Red Planet Labs publishes Rama release changes in the public rama-release-notes
+  GitHub repository. This artifact records the changelog scheme and current
+  released versions; the per-version detail lives in the source repo (the
+  authoritative, dated log). No public dated API-version changelog exists beyond
+  the release-notes repo.
+scheme: per-release notes in a public GitHub repository
+docs: https://github.com/redplanetlabs/rama-release-notes
+current:
+  rama: 1.9.0
+  rama-helpers: 0.10.0
+  rama-kafka: 0.14.0
+entries:
+  - version: rama 1.9.0
+    latest: true
+    highlights:
+      - Current released version of the core Rama library (com.rpl:rama).
+    source: https://github.com/redplanetlabs/rama-release-notes
+note: >-
+  Individual dated release entries are maintained in rama-release-notes; they
+  were not enumerated verbatim here to avoid fabrication. Product announcements
+  also appear on https://blog.redplanetlabs.com/.

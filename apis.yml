@@ -1,8 +1,30 @@
 aid: redplanetlabs
+accessModel:
+  pricing: unknown
+  onboarding: open
+  trial: false
+  try_now: false
+  public: true
+  label: Open access
+  confidence: medium
+  source:
+  - authentication
+  generated: '2026-07-22'
+  method: derived
+image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/icons/redplanetlabs.png
 name: Redplanetlabs
-description: Redplanetlabs is a company surfaced as a portfolio company of kindred-ventures and added
-  to the API Evangelist network as a stub for enrichment. This profile is a lead awaiting the enrichment
-  pipeline.
+description: >-
+  Red Planet Labs builds Rama, a unified backend platform for the JVM
+  (Java/Clojure) that consolidates databases, queues, workers, and
+  infrastructure into a single programming model — aiming to reduce backend
+  complexity by up to 100x while providing ACID semantics, reactive queries,
+  fine-grained change detection, and linear scalability. Rama exposes a REST API
+  (an in-cluster HTTP+JSON RPC surface for depot appends, PState queries, and
+  query-topology invokes), ships a `rama` operations CLI, publishes Maven client
+  libraries under the com.rpl groupId, open-sources the Specter data-navigation
+  library, and provides first-party Agent Skills for authoring Rama backends.
+  Surfaced as a portfolio company of Kindred Ventures and enriched into the API
+  Evangelist network.
 url: https://raw.githubusercontent.com/api-evangelist/redplanetlabs/refs/heads/main/apis.yml
 x-type: company
 x-source: vc-portfolio
@@ -12,10 +34,32 @@ x-tier: stub
 x-tier-reason: portfolio-lead
 specificationVersion: '0.20'
 created: '2026-07-17'
-modified: '2026-07-17'
+modified: '2026-07-21'
 tags:
 - Company
-apis: []
+- Backend Platform
+- Database
+- Distributed Systems
+- JVM
+- Developer Tools
+- Clojure
+apis:
+- name: Rama REST API
+  description: >-
+    In-cluster HTTP+JSON RPC surface exposed by Rama Supervisors (default port
+    2000) for appending to depots, querying PStates by navigation path, and
+    invoking query topologies. POST-only; no application-level authentication is
+    documented (access is governed at the cluster network boundary).
+  humanURL: https://redplanetlabs.com/docs/~/rest.html
+  properties:
+  - type: APIReference
+    url: https://redplanetlabs.com/docs/~/rest.html
+  - type: Conventions
+    url: conventions/redplanetlabs-conventions.yml
+  - type: Authentication
+    url: authentication/redplanetlabs-authentication.yml
+  - type: ErrorCatalog
+    url: errors/redplanetlabs-problem-types.yml
 maintainers:
 - FN: Kin Lane
   email: kin@apievangelist.com
@@ -24,3 +68,50 @@ maintainers:
 common:
 - type: Website
   url: https://redplanetlabs.com/
+- type: Documentation
+  url: https://redplanetlabs.com/docs/
+- type: APIReference
+  url: https://redplanetlabs.com/docs/~/rest.html
+- type: GettingStarted
+  url: https://redplanetlabs.com/docs/~/tutorial1.html
+- type: Pricing
+  url: https://redplanetlabs.com/pricing
+- type: Blog
+  url: https://blog.redplanetlabs.com/
+- type: BlogRSS
+  url: https://blog.redplanetlabs.com/feed/
+- type: GitHubOrganization
+  url: https://github.com/redplanetlabs
+- type: SDKs
+  url: packages/redplanetlabs-packages.yml
+- type: Packages
+  url: packages/redplanetlabs-packages.yml
+- type: CLI
+  url: cli/redplanetlabs-cli.yml
+- type: Conventions
+  url: conventions/redplanetlabs-conventions.yml
+- type: Authentication
+  url: authentication/redplanetlabs-authentication.yml
+- type: ErrorCatalog
+  url: errors/redplanetlabs-problem-types.yml
+- type: Conformance
+  url: conformance/redplanetlabs-conformance.yml
+- type: Lifecycle
+  url: lifecycle/redplanetlabs-lifecycle.yml
+- type: ChangeLog
+  url: changelog/redplanetlabs-changelog.yml
+- type: MCPServer
+  url: mcp/redplanetlabs-mcp.yml
+- type: LLMsTxt
+  url: llms/redplanetlabs-llms.txt
+- type: AgentSkill
+  url: skills/_index.yml
+- type: WellKnown
+  url: well-known/redplanetlabs-well-known.yml
+- type: DomainSecurity
+  url: security/redplanetlabs-domain-security.yml
+x-enrichment:
+  date: '2026-07-21'
+  status: enriched
+  artifacts_added: 13
+  pass: local-v1

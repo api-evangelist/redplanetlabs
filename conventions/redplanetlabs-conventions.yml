@@ -1,0 +1,65 @@
+generated: '2026-07-21'
+method: searched
+source: https://redplanetlabs.com/docs/~/rest.html
+description: >-
+  Cross-cutting request/response conventions for the Rama REST API. Rama's REST
+  API is an RPC-style HTTP surface exposed by Supervisors for interacting with a
+  running module's depots, PStates, and query topologies. Captured from the Rama
+  REST API documentation.
+api_style: RPC over HTTP; POST-only with JSON request/response bodies.
+base_url_pattern: "http://<host>:<port>/rest/<module-name>/..."
+default_ports:
+  supervisor: 2000
+  conductor: 8888
+authentication:
+  scheme: none documented
+  detail: authentication/redplanetlabs-authentication.yml
+  note: >-
+    The REST API documentation does not describe an authentication mechanism;
+    the surface is intended for access within a deployed cluster's network.
+redirects:
+  behavior: >-
+    The Conductor implements the REST API but returns 308 redirects to the
+    appropriate Supervisor that owns the requested partition.
+content_type:
+  request: application/json
+  response: application/json
+serialization:
+  encoding: JSON
+  special_types: >-
+    Non-JSON-native Rama types use a string escape of the form
+    "#__<type-char><value>" — e.g. "#__L123456789" for a 64-bit long,
+    "#__B19" for a byte.
+operations:
+  depot_append:
+    path: "POST /rest/<module-name>/depot/<depot-name>/append"
+    body: '{"data": <value>, "ackLevel": "ack" | "appendAck" | "none"}'
+    ack_levels:
+      ack: Wait until the record is durably appended to the depot.
+      appendAck: Wait until all colocated stream topologies finish processing the record.
+      none: Fire-and-forget; do not wait for acknowledgment.
+  pstate_query:
+    select: "POST /rest/<module-name>/pstate/<pstate-name>/select — returns a list of values."
+    select_one: "POST /rest/<module-name>/pstate/<pstate-name>/selectOne — returns a single value."
+    body: JSON-encoded path array.
+  query_topology:
+    invoke: "POST /rest/<module-name>/query/<topology-name>/invoke"
+    body: JSON array of arguments.
+idempotency:
+  supported: false
+  note: >-
+    No Idempotency-Key header is documented. Delivery semantics are controlled
+    per depot append via the ackLevel field rather than an idempotency key.
+pagination:
+  supported: false
+  note: >-
+    Queries are expressed as PState navigation paths rather than cursor/offset
+    pagination; result shape is determined by the path.
+versioning:
+  scheme: >-
+    Client/release version must match the cluster version; the CLI and libraries
+    are versioned together per Rama release.
+  detail: lifecycle/redplanetlabs-lifecycle.yml
+errors:
+  detail: errors/redplanetlabs-problem-types.yml
+  note: 500 status for server errors; no RFC 9457 problem+json envelope documented.

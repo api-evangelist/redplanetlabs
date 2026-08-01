@@ -1,0 +1,26 @@
+generated: '2026-07-21'
+method: derived
+status: candidate
+source: >-
+  Derived from the Rama REST API operations
+  (https://redplanetlabs.com/docs/~/rest.html). Red Planet Labs does not publish
+  an official hosted or remote MCP server; this is a CANDIDATE tool list mapped
+  from the REST surface, not a shipped server. (Note: the org ships agent SKILLS
+  for authoring Rama code — see skills/ — which is a distinct capability.)
+server:
+  name: redplanetlabs-rama
+  transport: none
+  url: null
+tools:
+  - name: depot_append
+    description: Append a record to a module depot.
+    maps_to: "POST /rest/<module-name>/depot/<depot-name>/append"
+  - name: pstate_select
+    description: Query a PState by navigation path and return a list of values.
+    maps_to: "POST /rest/<module-name>/pstate/<pstate-name>/select"
+  - name: pstate_select_one
+    description: Query a PState by navigation path and return a single value.
+    maps_to: "POST /rest/<module-name>/pstate/<pstate-name>/selectOne"
+  - name: query_topology_invoke
+    description: Invoke a query topology with an argument list.
+    maps_to: "POST /rest/<module-name>/query/<topology-name>/invoke"

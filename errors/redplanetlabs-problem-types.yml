@@ -1,0 +1,27 @@
+generated: '2026-07-21'
+method: derived
+source: >-
+  Derived from the Rama REST API documentation
+  (https://redplanetlabs.com/docs/~/rest.html). The docs describe HTTP status
+  behavior but do not publish a structured error-response schema, so titles and
+  remediation below are honest summaries, not a verbatim error reference.
+format: none
+note: >-
+  The Rama REST API does not use RFC 9457 application/problem+json. Errors are
+  signaled via HTTP status codes; response bodies are not documented as a
+  structured envelope.
+problem_types:
+  - status: 308
+    title: Permanent Redirect
+    detail: >-
+      The Conductor forwards REST requests to the Supervisor that owns the
+      requested partition. Follow the Location header to the correct Supervisor.
+    remediation: >-
+      Send requests directly to the appropriate Supervisor (default port 2000),
+      or follow the 308 redirect from the Conductor (default port 8888).
+  - status: 500
+    title: Server Error
+    detail: The Supervisor encountered an error processing the depot append or query.
+    remediation: >-
+      Inspect module logs; use `rama supportBundle` to gather diagnostics.
+      Verify the module, depot/PState/query name, and JSON path are valid.
