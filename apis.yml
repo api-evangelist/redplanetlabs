@@ -13,18 +13,14 @@ accessModel:
   method: derived
 image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/icons/redplanetlabs.png
 name: Redplanetlabs
-description: >-
-  Red Planet Labs builds Rama, a unified backend platform for the JVM
-  (Java/Clojure) that consolidates databases, queues, workers, and
-  infrastructure into a single programming model — aiming to reduce backend
-  complexity by up to 100x while providing ACID semantics, reactive queries,
-  fine-grained change detection, and linear scalability. Rama exposes a REST API
-  (an in-cluster HTTP+JSON RPC surface for depot appends, PState queries, and
-  query-topology invokes), ships a `rama` operations CLI, publishes Maven client
-  libraries under the com.rpl groupId, open-sources the Specter data-navigation
-  library, and provides first-party Agent Skills for authoring Rama backends.
-  Surfaced as a portfolio company of Kindred Ventures and enriched into the API
-  Evangelist network.
+description: Red Planet Labs builds Rama, a unified backend platform for the JVM (Java/Clojure) that consolidates
+  databases, queues, workers, and infrastructure into a single programming model — aiming to reduce backend
+  complexity by up to 100x while providing ACID semantics, reactive queries, fine-grained change detection,
+  and linear scalability. Rama exposes a REST API (an in-cluster HTTP+JSON RPC surface for depot appends,
+  PState queries, and query-topology invokes), ships a `rama` operations CLI, publishes Maven client libraries
+  under the com.rpl groupId, open-sources the Specter data-navigation library, and provides first-party
+  Agent Skills for authoring Rama backends. Surfaced as a portfolio company of Kindred Ventures and enriched
+  into the API Evangelist network.
 url: https://raw.githubusercontent.com/api-evangelist/redplanetlabs/refs/heads/main/apis.yml
 x-type: company
 x-source: vc-portfolio
@@ -34,7 +30,7 @@ x-tier: stub
 x-tier-reason: portfolio-lead
 specificationVersion: '0.20'
 created: '2026-07-17'
-modified: '2026-07-21'
+modified: '2026-08-08'
 tags:
 - Company
 - Backend Platform
@@ -45,11 +41,9 @@ tags:
 - Clojure
 apis:
 - name: Rama REST API
-  description: >-
-    In-cluster HTTP+JSON RPC surface exposed by Rama Supervisors (default port
-    2000) for appending to depots, querying PStates by navigation path, and
-    invoking query topologies. POST-only; no application-level authentication is
-    documented (access is governed at the cluster network boundary).
+  description: In-cluster HTTP+JSON RPC surface exposed by Rama Supervisors (default port 2000) for appending
+    to depots, querying PStates by navigation path, and invoking query topologies. POST-only; no application-level
+    authentication is documented (access is governed at the cluster network boundary).
   humanURL: https://redplanetlabs.com/docs/~/rest.html
   properties:
   - type: APIReference
@@ -110,8 +104,14 @@ common:
   url: well-known/redplanetlabs-well-known.yml
 - type: DomainSecurity
   url: security/redplanetlabs-domain-security.yml
+- type: SignUp
+  url: https://redplanetlabs.com/download
+- type: Twitter
+  url: https://twitter.com/redplanetlabs
 x-enrichment:
   date: '2026-07-21'
   status: enriched
   artifacts_added: 13
   pass: local-v1
+x-merged-from:
+- red-planet-labs
